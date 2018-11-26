@@ -17,13 +17,11 @@ pipeline {
                 }
             }
         }
-        /*
         stage('Build backend') {
             when { branch 'master' }
             steps {
-                build 'FINTprosjektet/fint-admin-portal/master'
+                build job: 'FINTprosjektet/fint-admin-portal-backend/master', wait: false
             }
         }
-        */
     }
 }
