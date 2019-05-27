@@ -70,9 +70,9 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing.unit * 7,
+    width: theme.spacing(7),
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing.unit * 9,
+      width: theme.spacing(9),
     },
   },
   toolbar: {
@@ -97,14 +97,14 @@ const styles = theme => ({
   logo: {
     height: '8%',
     width: '8%',
-    marginRight: theme.spacing.unit * 4,
+    marginRight: theme.spacing(4),
   },
   flex: {
     flex: 1,
   },
   fullName: {
     position: 'absolute',
-    right: theme.spacing.unit * 4,
+    right: theme.spacing(4),
   }
 });
 
@@ -149,10 +149,10 @@ class AppMenu extends React.Component {
               <MenuIcon/>
             </IconButton>
             <img src="fint.svg" alt="logo" className={classes.logo} onClick={() => window.location = "/"}/>
-            <Typography variant="title" color="inherit" noWrap className={classes.flex}>
+            <Typography variant="h6" color="inherit" noWrap className={classes.flex}>
               Admin Portal
             </Typography>
-            <Typography style={{position: 'absolute', right: '2%'}} variant="subheading" color="inherit" noWrap>
+            <Typography style={{position: 'absolute', right: '2%'}} variant="subtitle1" color="inherit" noWrap>
               {this.state.me.fullName}
             </Typography>
           </Toolbar>
