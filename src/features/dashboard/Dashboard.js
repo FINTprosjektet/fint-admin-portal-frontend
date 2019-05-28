@@ -16,9 +16,9 @@ import {fetchContacts} from "../../data/redux/dispatchers/contact";
 
 const styles = theme => ({
     root: {
-        marginTop: theme.spacing.unit * 3,
+        marginTop: theme.spacing(3),
         width: '100%',
-        height: '100%',
+        height: '101%',
     },
     cardContent: {
         textAlign: 'center',
@@ -53,7 +53,7 @@ class Dashboard extends Component {
         if (contacts && organisations && components) {
             return (
                 <div className={classes.root}>
-                    <Grid container spacing={24}>
+                    <Grid container spacing={3}>
                         <Grid item xs={4}>
                             <Link to="contacts" className={classes.cardLink}>
                                 <Card className={classes.card}>
@@ -68,7 +68,7 @@ class Dashboard extends Component {
                                     />
                                     <Divider/>
                                     <CardContent className={classes.cardContent}>
-                                        <Typography type="display4">
+                                        <Typography type="h1">
                                             {contacts.length}
                                         </Typography>
                                     </CardContent>
@@ -90,7 +90,7 @@ class Dashboard extends Component {
                                     />
                                     <Divider/>
                                     <CardContent className={classes.cardContent}>
-                                        <Typography type="display4">
+                                        <Typography type="h1">
                                             {organisations.length}
                                         </Typography>
                                     </CardContent>
@@ -111,7 +111,7 @@ class Dashboard extends Component {
                                     />
                                     <Divider/>
                                     <CardContent className={classes.cardContent}>
-                                        <Typography type="display4">
+                                        <Typography type="h1">
                                             {components.length}
                                         </Typography>
                                     </CardContent>

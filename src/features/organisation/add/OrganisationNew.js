@@ -8,14 +8,14 @@ import DomainNameValidationInput from "../../../common/DomainNameValidationInput
 
 const styles = (theme) => ({
   createOrganisationButton: {
-    margin: theme.spacing.unit,
-    top: theme.spacing.unit * 10,
-    right: theme.spacing.unit * 3,
+    margin: theme.spacing(1),
+    top: theme.spacing(10),
+    right: theme.spacing(3),
     position: "absolute"
   },
   dialogContent: {
-    marginRight: theme.spacing.unit,
-    marginLeft: theme.spacing.unit
+    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(1)
   }
 });
 

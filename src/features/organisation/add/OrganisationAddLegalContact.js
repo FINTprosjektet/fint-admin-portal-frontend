@@ -38,12 +38,12 @@ const styles = (theme) => ({
     height: '75%',
   },
   contactList: {
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: theme.spacing.unit * 2,
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
   },
   title: {
-    paddingLeft: theme.spacing.unit * 3,
-    paddingBottom: theme.spacing.unit,
+    paddingLeft: theme.spacing(3),
+    paddingBottom: theme.spacing(1)
   },
   listItem: {
     borderBottom: '1px dashed lightgray',
@@ -57,7 +57,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   searchInput: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     width: '80%',
   },
   removeIcon: {
