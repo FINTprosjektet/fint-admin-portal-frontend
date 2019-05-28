@@ -88,6 +88,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
     padding: 24,
     height: 'calc(100% - 56px)',
+    minHeight: '800px',
     marginTop: 56,
     [theme.breakpoints.up('sm')]: {
       height: 'calc(100% - 64px)',

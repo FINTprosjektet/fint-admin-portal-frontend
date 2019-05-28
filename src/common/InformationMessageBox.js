@@ -11,7 +11,7 @@ const styles = (theme) => ({
     color: theme.palette.secondary.main,
     fontSize: '80px',
     float: 'left',
-    marginRight: theme.spacing.unit(2),
+    marginRight: theme.spacing(2),
   },
   text: {}
 });

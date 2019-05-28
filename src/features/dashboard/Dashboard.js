@@ -18,7 +18,7 @@ const styles = theme => ({
     root: {
         marginTop: theme.spacing(3),
         width: '100%',
-        height: '100%',
+        height: '101%',
     },
     cardContent: {
         textAlign: 'center',

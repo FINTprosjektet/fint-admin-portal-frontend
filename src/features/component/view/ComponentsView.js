@@ -23,7 +23,7 @@ const styles = theme => ({
   endpointMainTitle: {
     fontWeight: "bold",
     fontStyle: "italic",
-    paddingTop: theme.spacing.unit(5)
+    paddingTop: theme.spacing(5),
   },
   endpointsCell: {
     paddingLeft: theme.spacing(5)
