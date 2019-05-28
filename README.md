@@ -1,2 +1,2 @@
-# fint-admin-portal-frontend
+# Admin portal frontend
 FINT Admin Portal Frontend
