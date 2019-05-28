@@ -20,7 +20,7 @@ pipeline {
         stage('Build backend') {
             when { branch 'master' }
             steps {
-                build job: 'FINTprosjektet/fint-admin-portal-backend/master', wait: false
+                build job: 'FINTLabs/fint-admin-portal-backend/master', wait: false
             }
         }
     }
