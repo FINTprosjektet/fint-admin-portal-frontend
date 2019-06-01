@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, withStyles } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, withStyles, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import PropTypes from "prop-types";
 import OrganisationApi from "../../../data/api/OrganisationApi";
@@ -78,10 +78,10 @@ class OrganisationNew extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <Button onClick={() => this.openCreateDialog()} variant="fab" color="secondary" aria-label="add"
+        <Fab onClick={() => this.openCreateDialog()} color="secondary" aria-label="add"
                 className={classes.createOrganisationButton}>
           <AddIcon/>
-        </Button>
+        </Fab>
         <Dialog
           open={this.state.open}
           onClose={this.handleCancel}
