@@ -177,7 +177,7 @@ getPrimaryAssetId = (organisation) => {
           notify={this.props.notify}
         />
         <div className={classes.organisationList}>
-          <Typography variant="headline" className={classes.title}>Organisasjoner</Typography>
+          <Typography variant="h5" className={classes.title}>Organisasjoner</Typography>
           <Divider/>
           <List>
             {organisations.map((organisation) =>

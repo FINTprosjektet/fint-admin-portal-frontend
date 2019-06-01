@@ -128,7 +128,7 @@ class ComponentList extends Component {
                     onClose={this.onCloseShowComponent}
                 />
                 <div className={classes.componentList}>
-                    <Typography variant="headline" className={classes.title}>Komponenter</Typography>
+                    <Typography variant="h5" className={classes.title}>Komponenter</Typography>
                     <Divider/>
                     <List>
                         {components.map((component) =>

@@ -107,7 +107,7 @@ class ContactList extends React.Component {
                     notify={this.props.notify}
                 />
                 <div className={classes.contactList}>
-                    <Typography variant="headline" className={classes.title}>Kontakter</Typography>
+                    <Typography variant="h5" className={classes.title}>Kontakter</Typography>
                     <Divider/>
                     <List>
                         {contacts.map((contact) =>

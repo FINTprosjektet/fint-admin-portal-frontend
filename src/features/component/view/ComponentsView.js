@@ -145,20 +145,7 @@ class ComponentsView extends React.Component {
                       />
                     </TableCell>
                   </TableRow>
-                  <TableRow>
-                    <TableCell variant="head">Port</TableCell>
-                    <TableCell variant="body">
-                      <TextField
-                        name="port"
-                        label="Port"
-                        required
-                        fullWidth
-                        type="number"
-                        value={this.state.component.port}
-                        onChange={this.updateComponentState}
-                      />
-                    </TableCell>
-                  </TableRow>
+                  
                   <TableRow>
                     <TableCell variant="head">Åpne data</TableCell>
                     <TableCell variant="body">
@@ -175,6 +162,45 @@ class ComponentsView extends React.Component {
                       <Checkbox
                         name="common"
                         checked={this.state.component.common}
+                        onChange={this.updateComponentCheckBoxState}
+                      />
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell
+                      variant="head"
+                      colSpan={2}
+                      className={classes.endpointMainTitle}
+                    >
+                      Miljøer
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell variant="head" className={classes.endpointsCell}>Produksjon</TableCell>
+                    <TableCell variant="body">
+                      <Checkbox
+                        name="inProduction"
+                        checked={this.state.component.inProduction}
+                        onChange={this.updateComponentCheckBoxState}
+                      />
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell variant="head" className={classes.endpointsCell}>Beta</TableCell>
+                    <TableCell variant="body">
+                      <Checkbox
+                        name="inBeta"
+                        checked={this.state.component.inBeta}
+                        onChange={this.updateComponentCheckBoxState}
+                      />
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell variant="head" className={classes.endpointsCell}>Play-with-FINT</TableCell>
+                    <TableCell variant="body">
+                      <Checkbox
+                        name="inPlayWithFint"
+                        checked={this.state.component.inPlayWithFint}
                         onChange={this.updateComponentCheckBoxState}
                       />
                     </TableCell>
