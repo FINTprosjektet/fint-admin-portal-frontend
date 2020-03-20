@@ -167,6 +167,16 @@ class ComponentsView extends React.Component {
                     </TableCell>
                   </TableRow>
                   <TableRow>
+                    <TableCell variant="head">FINT kjernekomponent</TableCell>
+                    <TableCell variant="body">
+                      <Checkbox
+                          name="isCore"
+                          checked={this.state.component.isCore}
+                          onChange={this.updateComponentCheckBoxState}
+                      />
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
                     <TableCell
                       variant="head"
                       colSpan={2}
