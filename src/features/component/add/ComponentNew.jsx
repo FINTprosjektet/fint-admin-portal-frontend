@@ -41,7 +41,7 @@ class ComponentNew extends Component {
         /*
                 openData: false,
                 common: false,
-                isCore: false,
+                core: false,
                 basePath: '',
                 description: '',
                 name: '',
@@ -184,11 +184,11 @@ class ComponentNew extends Component {
                 <FormControlLabel
                     control={
                       <Checkbox
-                          checked={this.state.component.isCore}
+                          checked={this.state.component.core}
                           onChange={this.updateComponentCheckBoxState}
                       />
                     }
-                    name="isCore"
+                    name="core"
                     label="FINT kjernekomponent"
                 />
               </FormGroup>
