@@ -14,6 +14,8 @@ import WarningMessageBox from "../../common/WarningMessageBox";
 import ComponentApi from "../../data/api/ComponentApi";
 import {fetchComponents} from "../../data/redux/dispatchers/component";
 import Sort from "../../common/utils/Sort";
+import OpenDataLabel from "../../common/label/OpenDataLabel";
+import CommonComponentLabel from "../../common/label/CommonComponentLabel";
 
 
 const styles = theme => ({
@@ -131,7 +133,7 @@ class ComponentList extends Component {
                     <Typography variant="h5" className={classes.title}>Komponenter</Typography>
                     <Divider/>
                     <List>
-                        {components.map((component) =>
+                        {components.map(component =>
                             <ListItem className={classes.listItem} key={component.dn}>
                                 <ListItemAvatar>
                                     <Avatar className={classes.itemAvatar}>
@@ -143,11 +145,16 @@ class ComponentList extends Component {
                                     secondary={component.basePath}
                                 />
                                 <ListItemSecondaryAction>
+                                    {component.openData && <OpenDataLabel />}
+                                    {component.common && <CommonComponentLabel />}
                                     <IconButton aria-label="Remove"
                                                 onClick={() => this.askToRemoveComponent(component)}>
                                         <RemoveIcon className={classes.removeIcon}/>
                                     </IconButton>
-                                    <IconButton aria-label="Settings" onClick={() => this.showComponent(component)}>
+                                    <IconButton
+                                        aria-label="Settings"
+                                        onClick={() => this.showComponent(component)}
+                                    >
                                         <SettingsIcon/>
                                     </IconButton>
                                 </ListItemSecondaryAction>
