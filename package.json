@@ -16,7 +16,7 @@
     "generate-password": "^1.4.1",
     "glob-to-regexp": "^0.4.1",
     "immutable": "^4.0.0-rc.12",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-cookie": "^4.0.0",
