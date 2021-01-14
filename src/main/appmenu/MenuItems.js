@@ -4,6 +4,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import BusinessIcon from "@material-ui/icons/Business";
 import ContactIcon from "@material-ui/icons/Person";
 import ComponentIcon from "@material-ui/icons/WebAsset";
+import AccessIcon from "@material-ui/icons/LockOpen";
 import ToolsIcon from "@material-ui/icons/Build";
 import {Link} from "react-router-dom";
 
@@ -43,6 +44,14 @@ export const MENU_ITEMS = (
                     <ComponentIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Komponenter"/>
+            </ListItem>
+        </Link>
+        <Link to="/access" style={menuLink}>
+            <ListItem button>
+                <ListItemIcon>
+                    <AccessIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Aksesspakker"/>
             </ListItem>
         </Link>
         <Link to="/tools" style={menuLink}>
