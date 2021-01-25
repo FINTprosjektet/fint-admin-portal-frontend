@@ -113,8 +113,6 @@ const EditAccessPackageContainer = (props) => {
                     selectedAccessPackage={selectedAccessPackage}/>
                 <Divider/>
 
-
-
                     <>
                         <EntitySelection selectedAccessPackage={selectedAccessPackage}/>
                         <Fab color="secondary" className={classes.addButton} onClick={openComponentSelector}
