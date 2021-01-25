@@ -41,7 +41,6 @@ const EditAccessPackageContainer = (props) => {
     const selectedForEditingId = useSelector(state => state.accessTemplate.selectedForEditing);
     const accessTemplates = useSelector(state => state.accessTemplate.access_templates);
     const componentConfiguration = useSelector(state => state.component_configuration.componentConfiguration);
-    const [tabValue, setTabValue] = useState(0);
     const dispatch = useDispatch();
 
     let selectedAccessPackage = undefined;
@@ -90,10 +89,6 @@ const EditAccessPackageContainer = (props) => {
         dispatch(updateAccessPackages(newAccessPackages));
     }
 
-    function handleTabChange(event, newValue) {
-        setTabValue(newValue);
-    }
-
     function closeCloseDialog() {
         setOpenCloseDialog(false);
     }
@@ -138,7 +133,6 @@ const EditAccessPackageContainer = (props) => {
                         <Button variant="contained"
                                 onClick={() => {
                                     setOpenCloseDialog(false);
-                                    setTabValue(0);
                                     handleClose();
                                 }} color="primary" autoFocus>
                             Avslutt

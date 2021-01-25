@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Paper, TableBody} from "@material-ui/core";
+import {Box, TableBody} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Table from "@material-ui/core/Table";
@@ -34,9 +34,6 @@ const useStyles = makeStyles(theme => ({
     header: {
         marginTop: theme.spacing(4),
     },
-    chooseAllRow: {
-        backgroundColor: theme.palette.secondary.light,
-    },
     customWidth: {
         maxWidth: 500,
     },
@@ -60,7 +57,7 @@ const EntitySelection = (props) => {
     function updateAccesses(event, path) {
         let newAccessPackages = [...accessTemplates];
         let newAccessPackage = {...selectedAccessPackage};
-        const accessPackageIndex= newAccessPackages.indexOf(newAccessPackages.filter(ap=> ap.dn === newAccessPackage.dn)[0]);
+        const accessPackageIndex = newAccessPackages.indexOf(newAccessPackages.filter(ap => ap.dn === newAccessPackage.dn)[0]);
 
         switch (event.target.name) {
             case "collection":
@@ -112,13 +109,16 @@ const EntitySelection = (props) => {
     return (
         <div className={classes.root}>
 
-            <Box className={classes.accessBox} >
+            <Box className={classes.accessBox}>
                 <Typography variant="h4" className={classes.header}>Tilganger</Typography>
                 <Table className={classes.table} size="small" aria-label="simple table">
                     <TableHead>
-                        <TableHeader classes={classes} selectedAccessPackage={selectedAccessPackage}/>
+                        <TableHeader classes={classes}
+                                     selectedAccessPackage={selectedAccessPackage}/>
                     </TableHead>
                     <TableBody>
+                        <SelectAllEntitiesCheckboxes checkAll={checkAll}
+                                                     selectedAccessPackage={selectedAccessPackage}/>
                         {componentConfiguration.map(component => {
                             if (selectedAccessPackage.components.includes(component.dn)) {
                                 return component.classes.map(entity => {
@@ -138,8 +138,6 @@ const EntitySelection = (props) => {
                             }
                         })
                         }
-                        <SelectAllEntitiesCheckboxes classes={classes} checkAll={checkAll}
-                                                     selectedAccessPackage={selectedAccessPackage}/>
                     </TableBody>
                 </Table>
             </Box>
