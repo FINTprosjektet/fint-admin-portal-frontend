@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     },
     tableRow: {
         '&:nth-of-type(even)': {
-            backgroundColor: "#fef3ef",
+            backgroundColor: theme.palette.grey["100"],
         },
     },
     icon: {
