@@ -15,6 +15,7 @@ import {
   withStyles
 } from "@material-ui/core";
 import BusinessIcon from '@material-ui/icons/Business';
+import PersonIcon from '@material-ui/icons/Person';
 import {withContext} from "../../data/context/withContext";
 import RemoveIcon from "@material-ui/icons/RemoveCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -105,6 +106,14 @@ class OrganisationList extends React.Component {
     }
   };
 
+  showContacts = (organisation) => {
+    this.setState({
+      showContacts: true,
+      organisation: organisation,
+      contacts: this.props.fetchContacts(),
+    });
+  };
+
   removeOrganisation = (organisation) => {
     OrganisationApi.deleteOrganisation(organisation).then(response => {
       if (response.status === 202) {
@@ -192,6 +201,10 @@ getPrimaryAssetId = (organisation) => {
                   secondary={`${organisation.primaryAssetId !== null ? organisation.primaryAssetId : 'Ikke tilgjengelig'}`}
                 />
                 <ListItemSecondaryAction>
+                  <IconButton aria-label="Contacts"
+                              onClick={() => this.showContacts(organisation)}>
+                    <PersonIcon/>
+                  </IconButton>
                   <IconButton aria-label="Remove"
                               onClick={() => this.askToRemoveOrganisation(organisation)}>
                     <RemoveIcon className={classes.removeIcon}/>
