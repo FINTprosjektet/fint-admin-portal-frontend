@@ -5,6 +5,7 @@ import OrganisationContainer from "../../features/organisation/OrganisationConta
 import ContactContainer from "../../features/contact/ContactContainer";
 import ComponentContainer from "../../features/component/ComponentContainer";
 import ToolContainer from "../../features/tool/ToolContainer";
+import AccessPackageTemplateContainer from "../../features/access_template/AccessPackageTemplateContainer";
 
 class Routes extends React.Component {
 
@@ -15,6 +16,7 @@ class Routes extends React.Component {
                 <Route exact path='/organisations' component={OrganisationContainer}/>
                 <Route exact path='/contacts' component={ContactContainer}/>
                 <Route exact path='/components' component={ComponentContainer}/>
+                <Route exact path='/access' component={AccessPackageTemplateContainer}/>
                 <Route exact path='/tools' component={ToolContainer}/>
             </div>
         );
