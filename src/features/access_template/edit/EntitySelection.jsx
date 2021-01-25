@@ -112,7 +112,7 @@ const EntitySelection = (props) => {
     return (
         <div className={classes.root}>
 
-            <Box className={classes.accessBox} component={Paper}>
+            <Box className={classes.accessBox} >
                 <Typography variant="h4" className={classes.header}>Tilganger</Typography>
                 <Table className={classes.table} size="small" aria-label="simple table">
                     <TableHead>
