@@ -7,12 +7,10 @@ import AddAccessPackageForm from "./TemplateForm";
 
 const useStyles = makeStyles((theme) => ({
     addButton: {
-        margin: 0,
-        top: 100,
-        left: "auto",
-        bottom: "auto",
-        right: 50,
-        position: "fixed"
+        margin: theme.spacing(1),
+        top: theme.spacing(10),
+        right: theme.spacing(3),
+        position: "absolute"
     }
 }));
 
