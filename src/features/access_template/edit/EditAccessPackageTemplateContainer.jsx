@@ -113,12 +113,7 @@ const EditAccessPackageContainer = (props) => {
                     selectedAccessPackage={selectedAccessPackage}/>
                 <Divider/>
 
-                <AppBar position="static">
 
-                    <Tabs value={tabValue} onChange={handleTabChange} aria-label="simple tabs example" centered>
-                        <Tab label="Velg tilganger"/>
-                    </Tabs>
-                </AppBar>
 
                     <>
                         <EntitySelection selectedAccessPackage={selectedAccessPackage}/>
