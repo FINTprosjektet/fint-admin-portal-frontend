@@ -5,7 +5,7 @@ import OrganisationContainer from "../../features/organisation/OrganisationConta
 import ContactContainer from "../../features/contact/ContactContainer";
 import ComponentContainer from "../../features/component/ComponentContainer";
 import ToolContainer from "../../features/tool/ToolContainer";
-import AccessPackageTemplateContainer from "../../features/access__template/access_package_template_container";
+import AccessPackageTemplateContainer from "../../features/access_template/AccessPackageTemplateContainer";
 
 class Routes extends React.Component {
 

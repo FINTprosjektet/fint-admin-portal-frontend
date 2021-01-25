@@ -3,7 +3,7 @@ import {Fab} from "@material-ui/core";
 import {Add} from "@material-ui/icons";
 import {makeStyles} from "@material-ui/core/styles";
 import {useSelector} from "react-redux";
-import AddAccessPackageForm from "./template_form";
+import AddAccessPackageForm from "./TemplateForm";
 
 const useStyles = makeStyles((theme) => ({
     addButton: {

@@ -5,8 +5,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from "@material-ui/core/Button";
 import {useDispatch, useSelector} from "react-redux";
-import ChangedAccesses from "./changed_accesses";
-import ChangedComponents from "./changed_components";
+import ChangedAccesses from "./ChangedAccesses";
+import ChangedComponents from "./ChangedComponents";
 import AccessTemplateApi from "../../../data/api/AccessTemplateApi";
 import {fetchAccessTemplates} from "../../../data/redux/dispatchers/access_template";
 

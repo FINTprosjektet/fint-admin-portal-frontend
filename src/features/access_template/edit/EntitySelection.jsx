@@ -5,9 +5,9 @@ import Typography from "@material-ui/core/Typography";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import {useDispatch, useSelector} from "react-redux";
-import SelectAllEntitiesCheckboxes from "./select_all_entities_checkboxes";
-import EntityTable from "./entity_table";
-import TableHeader from "./entity_table_header";
+import SelectAllEntitiesCheckboxes from "./SelectAllEntitiesCheckboxes";
+import EntityTable from "./EntityTable";
+import TableHeader from "./EntityTableHeader";
 import {updateAccessPackages} from "../../../data/redux/actions/access_templates";
 
 const useStyles = makeStyles(theme => ({

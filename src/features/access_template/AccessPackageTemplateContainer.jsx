@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAccessTemplates} from "../../data/redux/dispatchers/access_template";
 import LoadingProgress from "../../common/LoadingProgress";
-import AccessTemplateList from "./access_template_list";
+import AccessTemplateList from "./AccessTemplateList";
 import {fetchEntities} from "../../data/redux/dispatchers/entity";
-import AddAccessPackage from "./add/add_access_package_template";
+import AddAccessPackage from "./add/AddAccessPackageTemplate";
 
 const AccessPackageTemplateContainer = () => {
     const dispatch = useDispatch();

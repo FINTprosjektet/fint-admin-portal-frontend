@@ -6,10 +6,10 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import WarningMessageBox from "../../common/WarningMessageBox";
 import {makeStyles} from "@material-ui/core/styles";
-import AccessPackageListItem from "./access_package_template_list_item";
+import AccessPackageListItem from "./AccessPackageTemplateListItem";
 import AccessTemplateApi from "../../data/api/AccessTemplateApi";
-import SavedSuccessSnackbar from "./saved_success_snackbar";
-import EditAccessPackageContainer from "./edit/edit_access_package_template_container";
+import SavedSuccessSnackbar from "../../common/SavedSuccessSnackbar";
+import EditAccessPackageContainer from "./edit/EditAccessPackageTemplateContainer";
 import {setAccessPackageBeforeChanges, setSelectedForEditingPackage} from "../../data/redux/actions/access_templates";
 import {fetchComponents} from "../../data/redux/dispatchers/component";
 
