@@ -21,6 +21,7 @@ import RemoveIcon from "@material-ui/icons/RemoveCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance"
 import OrganisationView from "./view/OrganisationView";
+import OrganisationContacts from "./view/OrganisationContacts";
 import OrganisationApi from "../../data/api/OrganisationApi";
 import OrganisationAddLegalContact from "./add/OrganisationAddLegalContact";
 import Sort from "../../common/utils/Sort";
@@ -61,6 +62,7 @@ class OrganisationList extends React.Component {
       showAddLegalContactDialog: false,
       askToRemoveOrganisation: false,
       showOrganisation: false,
+      showContacts: false,
       organisation: {},
       currentLegalContact: {},
       message: ''
@@ -178,6 +180,12 @@ getPrimaryAssetId = (organisation) => {
           refreshLegalContact={this.refreshLegalContact}
           organisation={this.state.organisation}
           show={this.state.showAddLegalContactDialog}
+        />
+        <OrganisationContacts
+          notify={this.props.notify}
+          contacts={this.props.contacts}
+          organisation={this.state.organisation}
+          show={this.state.showContacts}
         />
         <OrganisationView
           organisation={this.state.organisation}
