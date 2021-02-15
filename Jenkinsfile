@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('Publish') {
-            when { branch 'master' }
+            when { branch 'main' }
             steps {
                 withDockerRegistry([credentialsId: 'fintlabsacr.azurecr.io', url: 'https://fintlabsacr.azurecr.io']) {
                     sh "docker tag ${GIT_COMMIT} fintlabsacr.azurecr.io/admin-portal-frontend:latest"
@@ -18,9 +18,9 @@ pipeline {
             }
         }
         stage('Build backend') {
-            when { branch 'master' }
+            when { branch 'main' }
             steps {
-                build job: 'FINTLabs/fint-admin-portal-backend/master', wait: false
+                build job: 'FINTLabs/fint-admin-portal-backend/main', wait: false
             }
         }
     }
