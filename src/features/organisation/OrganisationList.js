@@ -111,7 +111,7 @@ class OrganisationList extends React.Component {
   showContacts = (organisation) => {
     this.setState({
       showContacts: true,
-      organisation: organisation,
+      currentOrganisation: organisation,
       contacts: this.props.fetchContacts(),
     });
   };
@@ -127,6 +127,12 @@ class OrganisationList extends React.Component {
       this.props.fetchOrganisations();
     }).catch(error => {
       alert(error);
+    });
+  };
+
+  onCloseContactView = () => {
+    this.setState({
+      showContacts: false,
     });
   };
 
@@ -184,8 +190,9 @@ getPrimaryAssetId = (organisation) => {
         <OrganisationContacts
           notify={this.props.notify}
           contacts={this.props.contacts}
-          organisation={this.state.organisation}
+          organisation={this.state.currentOrganisation}
           show={this.state.showContacts}
+          onClose={this.onCloseContactView}
         />
         <OrganisationView
           organisation={this.state.organisation}
@@ -238,7 +245,7 @@ getPrimaryAssetId = (organisation) => {
 OrganisationList.propTypes = {
   fetchOrganisations: PropTypes.any.isRequired,
   organisations: PropTypes.array.isRequired,
-  contacts: PropTypes.any.isRequired,
+  contacts: PropTypes.array.isRequired,
   fetchContacts: PropTypes.any.isRequired,
   notify: PropTypes.any.isRequired,
 };

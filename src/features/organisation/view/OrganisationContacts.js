@@ -1,11 +1,46 @@
 import React, {Component} from "react";
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
+import {
+  Avatar,
+  Button, 
+  Dialog, 
+  DialogActions, 
+  DialogContent, 
+  DialogTitle,   
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  withStyles,
+} from "@material-ui/core";
+import ContactIcon from "@material-ui/icons/Person";
 import PropTypes from "prop-types";
 import Sort from "../../../common/utils/Sort";
 
+const styles = (theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  organisationList: {
+    width: '75%',
+  },
+  title: {
+    paddingLeft: theme.spacing(3),
+    paddingBottom: theme.spacing(1)
+  },
+  listItem: {
+    borderBottom: '1px dashed lightgray',
+  },
+  itemAvatar: {
+    color: '#fff',
+    backgroundColor: theme.palette.secondary.main,
+  },
+  removeIcon: {
+    color: theme.palette.primary.light,
+  },
+});
 
 class OrganisationContacts extends Component {
-
 
   constructor(props) {
     super(props);
@@ -41,9 +76,14 @@ class OrganisationContacts extends Component {
     return this.setState({organisation: organisation, contacts: contacts});
   };
 
+  organisationFilter = (contact) => {
+    return this.state.organisation && this.state.organisation.techicalContacts && this.state.organisation.techicalContacts.includes(contact.dn);
+  };
+
   renderDialog() {
+    const {classes} = this.props;
     const organisation = this.state.organisation;
-    const contacts = this.state.contacts.sort(Sort.alphabetically);
+    const contacts = this.state.contacts;
     return (
       <div>
         <Dialog
@@ -51,10 +91,10 @@ class OrganisationContacts extends Component {
           onClose={this.handleCancel}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Kontakter</DialogTitle>
+          <DialogTitle id="form-dialog-title">Tekniske kontakter for {organisation?.displayName}</DialogTitle>
           <DialogContent>
             <List>
-              {contacts.filter(it => organisation.technicalContacts.includes(it.dn)).map((contact) => 
+              {contacts.filter(this.organisationFilter).sort(Sort.alphabetically).map((contact) => 
                 <ListItem className={classes.listItem} key={contact.dn}>
                   <ListItemAvatar>
                       <Avatar className={classes.itemAvatar}>
@@ -62,8 +102,8 @@ class OrganisationContacts extends Component {
                       </Avatar>
                   </ListItemAvatar>
                   <ListItemText
-                      primary={contact.firstName}
-                      secondary={contact.lastName}
+                      primary={contact.firstName + " " +  contact.lastName}
+                      secondary={contact.mail}
                   />
                 </ListItem>,
               )}
@@ -86,10 +126,10 @@ class OrganisationContacts extends Component {
 }
 
 OrganisationContacts.propTypes = {
-  organisation: PropTypes.any.isRequired,
+  organisation: PropTypes.object,
   contacts: PropTypes.array.isRequired,
   onClose: PropTypes.any.isRequired,
   show: PropTypes.any.isRequired
 };
 
-export default OrganisationContacts;
+export default withStyles(styles)(OrganisationContacts);
