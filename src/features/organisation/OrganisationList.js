@@ -21,6 +21,7 @@ import RemoveIcon from "@material-ui/icons/RemoveCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance"
 import OrganisationView from "./view/OrganisationView";
+import OrganisationContacts from "./view/OrganisationContacts";
 import OrganisationApi from "../../data/api/OrganisationApi";
 import OrganisationAddLegalContact from "./add/OrganisationAddLegalContact";
 import Sort from "../../common/utils/Sort";
@@ -61,6 +62,7 @@ class OrganisationList extends React.Component {
       showAddLegalContactDialog: false,
       askToRemoveOrganisation: false,
       showOrganisation: false,
+      showContacts: false,
       organisation: {},
       currentLegalContact: {},
       message: ''
@@ -109,7 +111,7 @@ class OrganisationList extends React.Component {
   showContacts = (organisation) => {
     this.setState({
       showContacts: true,
-      organisation: organisation,
+      currentOrganisation: organisation,
       contacts: this.props.fetchContacts(),
     });
   };
@@ -125,6 +127,12 @@ class OrganisationList extends React.Component {
       this.props.fetchOrganisations();
     }).catch(error => {
       alert(error);
+    });
+  };
+
+  onCloseContactView = () => {
+    this.setState({
+      showContacts: false,
     });
   };
 
@@ -179,6 +187,13 @@ getPrimaryAssetId = (organisation) => {
           organisation={this.state.organisation}
           show={this.state.showAddLegalContactDialog}
         />
+        <OrganisationContacts
+          notify={this.props.notify}
+          contacts={this.props.contacts}
+          organisation={this.state.currentOrganisation}
+          show={this.state.showContacts}
+          onClose={this.onCloseContactView}
+        />
         <OrganisationView
           organisation={this.state.organisation}
           onClose={this.onCloseOrganisationView}
@@ -230,7 +245,7 @@ getPrimaryAssetId = (organisation) => {
 OrganisationList.propTypes = {
   fetchOrganisations: PropTypes.any.isRequired,
   organisations: PropTypes.array.isRequired,
-  contacts: PropTypes.any.isRequired,
+  contacts: PropTypes.array.isRequired,
   fetchContacts: PropTypes.any.isRequired,
   notify: PropTypes.any.isRequired,
 };
