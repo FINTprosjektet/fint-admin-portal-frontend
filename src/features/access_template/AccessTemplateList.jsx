@@ -158,7 +158,7 @@ function handleSaveAccess() {
                     <div className={classes.root}>
                         <div className={classes.componentList}>
                             <Typography variant="h5" className={classes.title}>
-                                Tilgangspakker templates
+                                Tilgangspakker (maler)
                             </Typography>
                             <Divider/>
                             <List>

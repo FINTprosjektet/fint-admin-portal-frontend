@@ -51,7 +51,7 @@ export const MENU_ITEMS = (
                 <ListItemIcon>
                     <AccessIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Aksesspakker"/>
+                <ListItemText primary="Tilgangspakker"/>
             </ListItem>
         </Link>
         <Link to="/tools" style={menuLink}>
