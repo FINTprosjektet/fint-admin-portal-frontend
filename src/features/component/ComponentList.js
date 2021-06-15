@@ -6,6 +6,7 @@ import {
 import SettingsIcon from "@material-ui/icons/Settings";
 import RemoveIcon from "@material-ui/icons/RemoveCircle";
 import ComponentIcon from "@material-ui/icons/WebAsset";
+import StarIcon from "@material-ui/icons/Star";
 import AutoHideNotification from "../../common/AutoHideNotification";
 import PropTypes from "prop-types";
 import ComponentsView from "./view/ComponentsView";
@@ -41,6 +42,13 @@ const styles = theme => ({
     removeIcon: {
         color: theme.palette.primary.light,
     },
+    coreIcon: {
+        color: "#ffb300",
+        position: "absolute",
+        fontSize: "135%",
+        left: "41px",
+        top: "12px"
+    }
 });
 
 class ComponentList extends Component {
@@ -138,6 +146,7 @@ class ComponentList extends Component {
                                         <ComponentIcon/>
                                     </Avatar>
                                 </ListItemAvatar>
+                                <StarIcon className={classes.coreIcon}  visibility={component.core ? '"Visible' : 'Hidden'} />
                                 <ListItemText
                                     primary={component.description}
                                     secondary={component.basePath}
